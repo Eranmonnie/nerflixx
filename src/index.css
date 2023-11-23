@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Nsans Regular';
+    src: url('./assets/NetflixSans-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Nsans Light';
+    src: url('./assets/NetflixSans-Light.otf');
+}
+
+@font-face {
+    font-family: 'Nsans Bold';
+    src: url('./assets/NetflixSans-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Nsans Medium';
+    src: url('./assets/NetflixSans-Medium.otf');
+}
+
+
