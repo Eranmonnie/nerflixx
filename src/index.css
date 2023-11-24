@@ -22,4 +22,8 @@
     src: url('./assets/NetflixSans-Medium.otf');
 }
 
-
+body{
+    font-family: 'Nasna Regular', sans-serif;
+    background-color: black;
+    color: white;
+}
