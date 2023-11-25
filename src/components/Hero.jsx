@@ -43,13 +43,13 @@ export const Hero = () => {
             alt={title} 
             />
 
-            <div className="absolute w-full top-[20%] lg:top-[35%] p-4 md:p-8">
+            <div className="absolute w-full top-[10%] lg:top-[25%] p-4 md:p-8">
               <h1 className="text-3xl md:text-6xl font-nsans-bold">{title}</h1> 
               <div className="mt-8 mb-4">
                 <button className="capitalize bg-gray-300 text-black py-2 px-5">
                   play
                 </button>
-                <button className="capitalize border-gray-300 py-2 px-5 ml-4">
+                <button className="capitalize py-2 px-5 ml-4 buttonwenowork">
                   watch later
                 </button>
               </div>
