@@ -4,7 +4,7 @@ import Home from "./pages/Home"
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 const App = () => {
   return ( 
     <div className="">
