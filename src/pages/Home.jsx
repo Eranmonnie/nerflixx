@@ -1,11 +1,12 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
+import { MovieRow } from '../components/MovieRow';
 
 const Home = () => {
   return (
     <div>
       <Hero/>
-      <h1></h1>
+      <MovieRow/>
     </div>
   )
 }

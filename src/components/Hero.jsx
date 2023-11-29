@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import endpoints from '../services/movieServices';
+import endpoints, { createMovieImage } from '../services/movieServices';
 
 export const Hero = () => {
   const[movie, setMovie] = useState({});
@@ -12,8 +12,7 @@ export const Hero = () => {
       setMovie(randomMovie);
     })
   }, []);
-
-
+  
   const truncate=(str, len)=>{
       if(!str){
         return '' 
@@ -34,16 +33,16 @@ export const Hero = () => {
   const{title, backdrop_path, release_date, overview } = movie;
 
   return (
-    <div className="w-full h-[550px] lg:h-[850px]">
+    <div className="w-full h-[470px] lg:h-[570px]">
       <div className="w-full h-full">
-        <div className="absolute w-full h-[550px] lg:h-[850px] bg-gradient-to-r from-black" />
+        <div className="absolute w-full h-[470px] lg:h-[570px] bg-gradient-to-r from-black"/>
             <img
             className="w-full h-full object-cover object-top"
-            src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
+            src={createMovieImage(backdrop_path, 'original')}
             alt={title} 
             />
 
-            <div className="absolute w-full top-[10%] lg:top-[25%] p-4 md:p-8">
+            <div className="absolute w-full top-[10%] lg:top-[35%] p-4 md:p-8">
               <h1 className="text-3xl md:text-6xl font-nsans-bold">{title}</h1> 
               <div className="mt-8 mb-4">
                 <button className="capitalize bg-gray-300 text-black py-2 px-5">
