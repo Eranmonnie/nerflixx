@@ -1,5 +1,6 @@
 import React from 'react'
 import { createMovieImage } from '../services/movieServices'
+// import {} from 'react-icons/fa'
 
 export const MovieItem = ({movie}) => {
    const {backdrop_path, title, poster_path} = movie
@@ -8,6 +9,12 @@ export const MovieItem = ({movie}) => {
         <img
         className="w-full h-40 block object-cover"
          src={createMovieImage(backdrop_path ?? poster_path, "w500")} alt={title} />
+
+         <div className="absolute top-0 left-0 w-full h-40 bg-black/80 opacity-0 hover:opacity-100">
+          <p className="whitespace-normal text-xs md:text-sm flex justify-center items-center h-full font-nsans-bold">
+            {title}
+          </p>
+         </div>
     </div>
   )
 }
