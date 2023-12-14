@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
 const Signup = () => {
 
+const [rememberLogin, setRememberLogin] = useState(false)
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
+
+const debugg =(e)=>{
+  e.preventDefault()
+  console.log(email, password, rememberLogin)
+}
 
   return (
     <>
@@ -17,21 +25,28 @@ const Signup = () => {
         <div className='max-w-[450px] h-[600px] mx-auto bg-black/80 rounded-lg'>
           <div className='max-w-[320px] mx-auto py-16'>
             <h1 className="text-3xl font-nsans-bold">signup</h1>
-            <form className="w-full flex flex-col py-4">
+            <form onSubmit={debugg} className="w-full flex flex-col py-4">
 
               <input className="p-3 my-2 bg-gray-700 rounded"
                type="email" name="email" id="email"
-               placeholder="email" autoComplete="email" />
+               placeholder="email" autoComplete="email"
+               value={email}
+               onChange={(e)=>setEmail(e.target.value)} />
 
               <input className="p-3 my-2 bg-gray-700 rounded"
                type="password" name="password" id="password"
-               placeholder="password" autoComplete="current-password"/>
+               placeholder="password" autoComplete="current-password"
+               value={password}
+               onChange={(e)=>setPassword(e.target.value)}/>
 
               <button className="bg-red-600 py-3 my-6 rounded font-nsans-bold">SignUp</button>
 
               <div className="flex justify-between items-center text-gray-600 ">
                 <p>
-                  <input type="checkbox" className="mr-2"/> Remember Me
+                  <input type="checkbox" className="mr-2"
+                   checked={rememberLogin}
+                   onChange={(e)=>setRememberLogin(!rememberLogin)}/>
+                    Remember Me
                 </p>
                 <p>Need help?</p>
               </div>
