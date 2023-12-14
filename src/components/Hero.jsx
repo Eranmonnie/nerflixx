@@ -56,7 +56,7 @@ export const Hero = () => {
               <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-grey-200">{truncate(overview, 165) }</p>
             </div>
       </div>
-      {/* // {title} */}
+      
     </div>
   )
 }
