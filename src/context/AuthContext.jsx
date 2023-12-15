@@ -13,13 +13,13 @@ import { useEffect } from 'react'
 
 const AuthContext = createContext()
 
-useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{setuser(currentUser)})
-    return ()=>{unsubscribe()}
-}, [])
-
 export function AuthContextProvider({children}) {
     const[user,setUser] = useState({})
+
+    useEffect(()=>{
+        const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{setUser(currentUser)})
+        return ()=>{unsubscribe()}
+    }, [])
 
     const signup = (email, password)=>{createUserWithEmailAndPassword(auth, email, password)}
 
@@ -30,6 +30,6 @@ export function AuthContextProvider({children}) {
   return <AuthContext.Provider value ={{user, signup, login, logout}}>{children}</AuthContext.Provider>
 }
 
-export function UseAuth(){
+export function UserAuth(){
     return useContext(AuthContext)
 }

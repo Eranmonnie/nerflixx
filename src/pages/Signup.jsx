@@ -1,16 +1,24 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const Signup = () => {
-
 const [rememberLogin, setRememberLogin] = useState(false)
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const {user, signup} = UserAuth()
+const navigate = useNavigate()
 
-const debugg =(e)=>{
+const debugg = async(e)=>{
   e.preventDefault()
-  console.log(email, password, rememberLogin)
+  
+  try{
+    await signup(email, password)
+    navigate("/")
+  }
+  catch(err){
+    console.log(err)
+  }
 }
 
   return (

@@ -5,17 +5,20 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Navbar from './components/Navbar';
+import { AuthContextProvider } from './context/AuthContext';
 const App = () => {
   return ( 
-    <div className="">
+    <>
+    <AuthContextProvider>
       <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+        </Routes>
+    </AuthContextProvider>
+    </>
    );
 }
  
