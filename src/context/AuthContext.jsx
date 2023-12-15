@@ -25,7 +25,7 @@ export function AuthContextProvider({children}) {
 
     const login = (email, password)=>{signInWithEmailAndPassword(auth)}
 
-    const logout =()=>{signOut(auth, email, password)}
+    const logout =()=>{signOut(auth)}
 
   return <AuthContext.Provider value ={{user, signup, login, logout}}>{children}</AuthContext.Provider>
 }
