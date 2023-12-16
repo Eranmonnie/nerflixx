@@ -10,6 +10,7 @@ onAuthStateChanged
 } from 'firebase/auth'
 import { auth, db } from '../services/firebaseServises'
 import { useEffect } from 'react'
+import { doc, setDoc } from 'firebase/firestore'
 
 const AuthContext = createContext()
 
@@ -21,7 +22,11 @@ export function AuthContextProvider({children}) {
         return ()=>{unsubscribe()}
     }, [])
 
-    const signup = (email, password)=>{createUserWithEmailAndPassword(auth, email, password)}
+    const signup = (email, password)=>{
+        createUserWithEmailAndPassword(auth, email, password) 
+        setDoc(doc(db, "Users", email),{
+        favShows:[],
+    })}
 
     const login = (email, password)=>{signInWithEmailAndPassword(auth, email, password)}
 

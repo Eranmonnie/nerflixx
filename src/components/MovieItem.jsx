@@ -1,11 +1,28 @@
 import React, { useState } from 'react'
 import { createMovieImage } from '../services/movieServices'
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { doc, arrayUnion, updateDoc } from 'firebase/firestore';
+import { db } from '../services/firebaseServises'
+import { UserAuth } from '../context/AuthContext';
 
 export const MovieItem = ({movie}) => {
 
  const [like, setlike] = useState(false)
  const {backdrop_path, title, poster_path} = movie
+ const {user} = UserAuth()
+ const  markFavshow = async()=>{
+    const userEmail =user?.email 
+    if (userEmail){
+      const userDoc = doc(db,"Users", userEmail)
+      setlike(!like)
+      await updateDoc(userDoc,{
+        favShows : arrayUnion({...movie})
+      })
+    }
+    else{
+      alert("login to save a movie")
+    }
+ }
   return (
     <div className="relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block rounded-lg overflow-hidden cursor-pointer m-2">
         <img
@@ -17,7 +34,7 @@ export const MovieItem = ({movie}) => {
             {title}
           </p>
 
-          <p>
+          <p onClick={markFavshow} className="cursor-pointer">
             {like ? <FaHeart size={20} 
             className="absolute top-2 left-2 text-gray-300"/> :
             
