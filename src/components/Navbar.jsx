@@ -22,14 +22,11 @@ const Navbar = () => {
         </Link>
 
         <div>
-            
-           
-
             {
                 user?.email ? 
                     (
                         <div>
-                            <Link to='/login'>
+                            <Link to='/profile'>
                                 <button className="capitalize pr-4">profile</button>
                             </Link>
 
