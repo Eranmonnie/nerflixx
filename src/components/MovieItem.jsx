@@ -45,3 +45,5 @@ export const MovieItem = ({movie}) => {
     </div>
   )
 }
+
+export default MovieItem
