@@ -16,7 +16,7 @@ export const MovieItem = ({movie}) => {
       const userDoc = doc(db,"Users", userEmail)
       setlike(!like)
       await updateDoc(userDoc,{
-        favShows : arrayUnion({...movie})
+        favShows : arrayUnion(movie)
       })
     }
     else{
