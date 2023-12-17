@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {MdChevronLeft, MdChevronRight} from "react-icons/md"
 import { AiOutlineClose } from 'react-icons/ai'
 import { createMovieImage } from '../services/movieServices'
-import { FaHeart} from "react-icons/fa";
 import { UserAuth } from '../context/AuthContext'
 import { db } from '../services/firebaseServises'
 import { arrayRemove, doc, onSnapshot, updateDoc } from 'firebase/firestore'
