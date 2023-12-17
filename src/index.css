@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Nsans Regular';
-    src: url('./assets/NetflixSans-Regular.otf');
+  font-family: "Nsans Regular";
+  src: url("./assets/NetflixSans-Regular.otf");
 }
 
 @font-face {
-    font-family: 'Nsans Light';
-    src: url('./assets/NetflixSans-Light.otf');
+  font-family: "Nsans Light";
+  src: url("./assets/NetflixSans-Light.otf");
 }
 
 @font-face {
-    font-family: 'Nsans Bold';
-    src: url('./assets/NetflixSans-Bold.otf');
+  font-family: "Nsans Bold";
+  src: url("./assets/NetflixSans-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Nsans Medium';
-    src: url('./assets/NetflixSans-Medium.otf');
+  font-family: "Nsans Medium";
+  src: url("./assets/NetflixSans-Medium.otf");
 }
 
-body{
-    font-family: 'Nasns Regular', sans-serif;
-    background-color: black;
-    color: white;
-    margin: 0;
-    padding: 0;
+body {
+  font-family: "Nasns Regular", sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.buttonwenowork{
-    border: 1px solid gray;
+.buttonwenowork {
+  border: 1px solid gray;
 }
